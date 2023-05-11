@@ -20,7 +20,7 @@ export const Navbar: FC = () => {
       <div>
         <a href=""></a>
       </div>
-      <nav className="mb-[-1px] h-full flex items-center w-full max-w-screen-xl px-4 mx-auto">
+      <nav className="mb-[-1px] h-full flex gap-6 items-center w-full max-w-screen-xl px-4 mx-auto">
         {navigation.map((item, index) => (
           <Link
             key={index}

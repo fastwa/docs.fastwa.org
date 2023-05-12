@@ -2,19 +2,18 @@
 title: Getting started
 ---
 
-### Installation
+# Installation
 
 System Requirements:
 * [Node.js](https://nodejs.org/)
 * macOS, Windows (includind WSL), and Linux are supported.
 
-### Automatic Installation
+## Automatic Installation
 ```
-npm i -g @fastwa/cli
-fastwa new project-name
+npx create-fastwa-app@latest
 ```
 
-### Manual Installation
+## Manual Installation
 
 To manually create a new Fastwa app, install the required packages:
 

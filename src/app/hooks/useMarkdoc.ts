@@ -26,15 +26,15 @@ const getNodeTitle = (node: Tag) => {
 };
 
 const collectHeadings = (
-  nodes: RenderableTreeNode,
+  nodes: RenderableTreeNode[],
   slugify = slugifyWithCounter()
-): RenderableTreeNode[] => {
+): any => {
   const sections = [];
 
   if (!Array.isArray(nodes)) return [];
 
   for (const node of nodes) {
-    if (/^h[23]$/.test(node.name)) {
+    if (/^h[123]$/.test(node.name)) {
       const title = getNodeTitle(node);
 
       if (title) {
@@ -49,7 +49,9 @@ const collectHeadings = (
       }
     }
 
-    sections.push(...collectHeadings(node.children, slugify));
+    sections.push(
+      ...collectHeadings(node.children as RenderableTreeNode[], slugify)
+    );
   }
 
   return sections;
@@ -61,12 +63,12 @@ export const useMarkdoc = (slug: string) => {
     const markdown = readFileSync(filePath, 'utf-8');
 
     const ast = Markdoc.parse(markdown);
-    const content = Markdoc.transform(ast);
+    const content = Markdoc.transform(ast) as RenderableTreeNode;
     const render = Markdoc.renderers.react(content, React);
 
     return {
       frontmatter: yaml.load(ast.attributes.frontmatter),
-      headings: collectHeadings(content as RenderableTreeNode),
+      headings: collectHeadings(content.children as RenderableTreeNode[]),
       render
     };
   } catch {

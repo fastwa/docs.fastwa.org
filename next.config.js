@@ -1,8 +1,11 @@
-const withMarkdoc = require('@markdoc/next.js');
-
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+module.exports = {
+  webpack(config) {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false
+    };
 
-module.exports = withMarkdoc(nextConfig)({
-  pageExtensions: ['md', 'tsx']
-});
+    return config;
+  }
+};

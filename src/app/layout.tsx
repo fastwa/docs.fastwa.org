@@ -3,6 +3,7 @@ import './globals.css';
 import { Footer, Navbar } from './components';
 
 export const metadata = {
+  title: 'Docs | Fastwa',
   icons: {
     icon: '/logo/logo.png'
   }

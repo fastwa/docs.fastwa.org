@@ -29,16 +29,18 @@ export const TableOfContents: FC<Props> = ({ headings }) => {
     });
   };
 
-  window.addEventListener('scroll', () => {
-    const scrollPos = document.documentElement.scrollTop;
+  if (typeof window !== 'undefined') {
+    window.addEventListener('scroll', () => {
+      const scrollPos = document.documentElement.scrollTop;
 
-    if (scrollPos > 150) {
-      setIsScrollVisible(true);
-      return;
-    }
+      if (scrollPos > 150) {
+        setIsScrollVisible(true);
+        return;
+      }
 
-    setIsScrollVisible(false);
-  });
+      setIsScrollVisible(false);
+    });
+  }
 
   return (
     <nav className="w-56 shrink-0 order-last hidden lg:block">

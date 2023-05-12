@@ -64,12 +64,13 @@ export const useMarkdoc = (slug: string) => {
 
     const ast = Markdoc.parse(markdown);
     const content = Markdoc.transform(ast) as RenderableTreeNode;
-    const render = Markdoc.renderers.react(content, React);
+
+    const headings = collectHeadings(content.children as RenderableTreeNode[]);
 
     return {
       frontmatter: yaml.load(ast.attributes.frontmatter),
-      headings: collectHeadings(content.children as RenderableTreeNode[]),
-      render
+      render: Markdoc.renderers.react(content, React),
+      headings
     };
   } catch {
     notFound();

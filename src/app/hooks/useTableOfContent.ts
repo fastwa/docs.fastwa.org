@@ -46,7 +46,7 @@ export function useTableOfContent(tableOfContent: any) {
       let current = sortedHeadings[0].id;
 
       for (let i = 0; i < sortedHeadings.length; i++) {
-        if (top >= sortedHeadings[i].top - 110) {
+        if (top >= sortedHeadings[i].top - 100) {
           current = sortedHeadings[i].id;
         }
       }

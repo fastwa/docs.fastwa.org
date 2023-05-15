@@ -2,7 +2,7 @@ export const theme = {
   plain: {},
   styles: [
     {
-      types: ['keyword'],
+      types: ['keyword', 'operator'],
       style: {
         color: '#f76191'
       }

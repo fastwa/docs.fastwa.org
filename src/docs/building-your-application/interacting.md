@@ -5,3 +5,11 @@
 This page will guide you through how to define and organize commands in your application.
 
 ## Creating Commands
+There are multiple ways of responding to a message. The most common way of sending a reply is by returning it in your controller `method`. This method acknowledges the interaction and sends a new message in response.
+
+```ts
+@Command('ping')
+ping() {
+  return 'Pong!';
+}
+```

@@ -11,7 +11,7 @@ type Props = {
   language: string;
 };
 
-export const Fence: FC<Props> = ({ children, language }) => {
+export const Fence: FC<Props> = ({ children, language = 'bash' }) => {
   const [copyCount, setCopyCount] = useState(0);
   const copied = copyCount > 0;
 

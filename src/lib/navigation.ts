@@ -5,6 +5,14 @@ export const navigation = [
       {
         name: 'Installation',
         href: '/getting-started/installation'
+      },
+      {
+        name: 'Controllers',
+        href: '/getting-started/controllers'
+      },
+      {
+        name: 'Param decorators',
+        href: '/getting-started/param-decorators'
       }
     ]
   },
@@ -20,6 +28,10 @@ export const navigation = [
         href: '/building-your-application/interacting'
       },
       {
+        name: 'Dynamic commands',
+        href: '/building-your-application/dynamic-commands'
+      },
+      {
         name: 'Schedule',
         href: '/building-your-application/schedule'
       }
@@ -31,6 +43,14 @@ export const navigation = [
       {
         name: 'Buttons',
         href: '/components/buttons'
+      },
+      {
+        name: 'Stickers',
+        href: '/components/stickers'
+      },
+      {
+        name: 'Select menus',
+        href: '/components/select-menus'
       }
     ]
   }

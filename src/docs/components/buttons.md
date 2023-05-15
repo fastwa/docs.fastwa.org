@@ -2,12 +2,28 @@
 title: Message components
 ---
 
-### Buttons
+# Buttons
 The first type of interactive component we'll cover creating is a Button.
 
-### Building buttons
+## Building buttons
+To create your buttons, use the `ButtonBuilder` class, defining `index`.
+```ts
+const callMe = new ButtonBuilder()
+  .setDisplayText('Call me!')
+  .setPhoneNumber('+1 (234) 5678-901')
+```
 
-### Replying to buttons
+### Sending buttons
+To send your buttons, create a template message and add the buttons as components. Then return in your `method`.
+```ts
+@Command('ping')
+ping() {
+  return new TemplateMessageBuilder()
+    .addComponents(callMe)
+}
+```
+
+## Replying to buttons
 ```ts
 @Button('button-id')
 getReply() {

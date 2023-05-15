@@ -3,8 +3,9 @@ title: Getting started
 ---
 
 # Installation
+If you have questions about anything related to Fastwa, you're always welcome to ask our community on [GitHub Discussions](https://github.com/fastwa/fastwa/discussions).
 
-System Requirements:
+**System Requirements:**
 * [Node.js 16.8](https://nodejs.org/) or later.
 * macOS, Windows (includind WSL), and Linux are supported.
 
@@ -15,17 +16,22 @@ We recommend creating a new Fastwa app using `create-fastwa-app`, which sets up 
 npx create-fastwa-app@latest
 ```
 
-## Manual Installation
+The project directory will be created, node modules and a few other boilerplate files will be installed, and a `src/` directory will be created and populated with several core files.
 
-To manually create a new Fastwa app, install the required packages:
+Here's a brief overview of those core files:
+
+| Filename            | Description                                                                                                         |
+|---------------------|---------------------------------------------------------------------------------------------------------------------|
+| `app.controller.ts` | A basic controller with a single command.                                                                           |
+| `app.module.ts`     | The root module of the application.                                                                                 |
+| `app.service.ts`    | A basic service with a single method.                                                                               |
+| `main.ts`           | The entry file of the application which uses the core function `WAFactory` to create a Fastwa application instance. |
+
+## Running the application
+Once the installation process is complete, you can run the following command at your command prompt to start the application:
 
 ```bash
-npm install @fastwa/core @fastwa/common @fastwa/client
+npm run start:dev
 ```
 
-These scripts refer to the different stages of developing an application:
-
-* `dev`: start fastwa in development mode.
-* `build`: build the application for production usage.
-* `start`: start a fastwa production server.
-* `lint`: set up fastwa built-in ESLint configuration.
+This command will watch your files, automatically recompiling and reloading the app.

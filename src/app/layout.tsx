@@ -1,11 +1,18 @@
 import './globals.css';
 
+import { Inter } from 'next/font/google';
 import { Footer, Navbar } from './components';
+import { SearchProvider } from './contexts';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap'
+});
 
 export const metadata = {
   title: 'Docs | Fastwa',
   icons: {
-    icon: '/logo/logo.png'
+    icon: '/logo/logo_blue.png'
   }
 };
 
@@ -15,11 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className} style={{ colorScheme: 'dark' }}>
       <body className="bg-black">
-        <Navbar />
-        {children}
-        <Footer />
+        <SearchProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </SearchProvider>
       </body>
     </html>
   );

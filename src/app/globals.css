@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-li {
+  @apply prose-li:before:content-['-'] prose-li:before:text-[#666] prose-li:before:absolute prose-li:before:ml-[-22px] prose-li:before:mt-px;
+}

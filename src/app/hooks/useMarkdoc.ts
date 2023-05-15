@@ -8,6 +8,9 @@ import { slugifyWithCounter } from '@sindresorhus/slugify';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 
+import { nodes } from '@/schema/nodes';
+import { Anchor, Fence } from '../[...slug]/components';
+
 type RenderableTreeNode = Tag<string, Record<string, any>>;
 
 const getNodeTitle = (node: Tag) => {
@@ -63,13 +66,20 @@ export const useMarkdoc = (slug: string) => {
     const markdown = readFileSync(filePath, 'utf-8');
 
     const ast = Markdoc.parse(markdown);
-    const content = Markdoc.transform(ast) as RenderableTreeNode;
+    const content = Markdoc.transform(ast, { nodes }) as RenderableTreeNode;
 
     const headings = collectHeadings(content.children as RenderableTreeNode[]);
 
+    const children = Markdoc.renderers.react(content, React, {
+      components: {
+        Anchor,
+        Fence
+      }
+    });
+
     return {
       frontmatter: yaml.load(ast.attributes.frontmatter),
-      render: Markdoc.renderers.react(content, React),
+      children,
       headings
     };
   } catch {

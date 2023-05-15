@@ -43,8 +43,8 @@ export const TableOfContents: FC<Props> = ({ headings }) => {
   }
 
   return (
-    <nav className="w-56 shrink-0 order-last hidden lg:block">
-      <div className="hidden lg:block sticky top-[126px] flex-none overflow-y-auto">
+    <nav className="w-56 shrink-0 hidden lg:block">
+      <div className="hidden lg:block sticky top-[126px] overflow-y-auto">
         <h2 className="mb-1 mt-[7px] text-sm font-medium text-white">
           On this page
         </h2>

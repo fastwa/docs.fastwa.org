@@ -25,7 +25,7 @@ You obviously don't want to keep scanning the QR code every time you want to con
 import { 
   fetchLatestBaileysVersion, 
   useMultiFileAuthState 
-} from '@adiwajshing/baileys';
+} from '@whiskeysockets/baileys';
 
 async function connectToWhatsapp() {
   const { state, saveCreds } = await useMultiFileAuthState('./sessions');

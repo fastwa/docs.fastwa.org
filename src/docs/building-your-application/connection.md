@@ -45,12 +45,14 @@ connectToWhatsapp()
 This function `useMultiFileAuthState()` save the auth state in a single folder.
 
 ## Saving Auth keys in Database
+Saving keys in a database offers advantages in terms of organization, performance, security, scalability, and data integrity, making it a preferred choice for many developers and applications.
 
+For example, this function provides session management for storing auth state in a database. It is designed to be used with [baileys](https://github.com/WhiskeySockets/Baileys) and offers functions to interact with the database for retrieving and storing session data.
 
 ```ts
 import { initAuthCreds } from "@whiskeysockets/baileys"
 
-export async function useDatabaseAuthState(sessionId: string) {
+export async function useDatabaseAuthState() {
   const creds = initAuthCreds();
   
   const state = {
@@ -77,3 +79,5 @@ export async function useDatabaseAuthState(sessionId: string) {
 ```
 
 > **Good to know:** `useDatabaseAuthState()` works similarly to [`useMultiFileAuthState()`](#saving-and-restoring-sessions), but instead of saving it in a JSON file, saves it in the database.
+
+> **Note:** The `useDatabaseAuthState()` function assumes the presence of a repository or database access layer that provides the necessary methods to interact with the database. You need to implement the specific database operations within the `get` and `set` functions, such as querying the database or using an ORM.

@@ -10,9 +10,12 @@ To access the value of the parameter, you can use the [`@Param()`](/getting-star
 For example, a bot include the following command `/say :text` where `:text` is the dynamic segment.
 
 ```ts
-@Command('/say :text')
-async say(@Param('text') text: string) {
-  return `What is ${text}?`;
+@Controller()
+export class AppController {
+  @Command('/say :text')
+  async say(@Param('text') text: string) {
+    return `What is ${text}?`;
+  }
 }
 ```
 

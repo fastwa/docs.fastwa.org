@@ -15,8 +15,10 @@ async function connectToWhatsapp() {
 connectToWhatsapp();
 ```
 
+> **Hint:** Caching makes the store faster to send/receive messages. e.g. You can use [node-cache](https://github.com/node-cache/node-cache) package to store retry counts of messages when decryption/encryption fails.
+
 ## Saving and Restoring Sessions
-> **Good to know:** You obviously don't want to keep scanning the QR code every time you want to connect. So, you can load the credentials to log back in.
+You obviously don't want to keep scanning the QR code every time you want to connect. So, you can load the credentials to log back in.
 
 
 ```ts
@@ -42,4 +44,36 @@ connectToWhatsapp()
 
 This function `useMultiFileAuthState()` save the auth state in a single folder.
 
-> **Hint:** Caching makes the store faster to send/receive messages. e.g. You can use [node-cache](https://github.com/node-cache/node-cache) package to store retry counts of messages when decryption/encryption fails.
+## Saving Auth keys in Database
+
+
+```ts
+import { initAuthCreds } from "@whiskeysockets/baileys"
+
+export async function useDatabaseAuthState(sessionId: string) {
+  const creds = initAuthCreds();
+  
+  const state = {
+    creds,
+    keys: {
+      async get<T extends keyof SignalDataTypeMap>(types: T, ids: string[]) {
+        // Get session from database
+        return Repository.findOne();
+      },
+      async set(data: SignalDataSet) {
+        // Update or insert session in database
+        Repository.upsert();
+      }
+    }
+  }
+
+  const saveCreds = () => Repository.save(creds)
+
+  return {
+    state,
+    saveCreds
+  }
+}
+```
+
+> **Good to know:** `useDatabaseAuthState()` works similarly to [`useMultiFileAuthState()`](#saving-and-restoring-sessions), but instead of saving it in a JSON file, saves it in the database.

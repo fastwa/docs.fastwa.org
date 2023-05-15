@@ -41,6 +41,10 @@ export const navigation = [
     name: 'Components',
     items: [
       {
+        name: 'Formatters',
+        href: '/components/formatters'
+      },
+      {
         name: 'Buttons',
         href: '/components/buttons'
       },

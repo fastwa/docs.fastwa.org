@@ -1,5 +1,5 @@
 # Schedule module
-Task scheduling allows you to schedule arbitrary code (methods/functions) to execute at a fixed date/time, recurring intervals, or once after a specified interval. Fastwa provides `@fastwa/schedule` package, which integrates with the popular Node.js [cron](https://github.com/kelektiv/node-cron) package.
+Fastwa provides [`@fastwa/schedule`](https://github.com/fastwa/fastwa/tree/main/packages/schedule) package, which integrates with the popular [cron](https://github.com/kelektiv/node-cron) package. That allows you to schedule arbitrary code (methods/functions) to execute at a fixed date/time, recurring intervals, or once after a specified interval.
 
 ## Installation
 To begin using it, we first install required dependencies.

@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://github.com/fastwa/fastwa" target="blank">
+    <img src="https://avatars.githubusercontent.com/u/118643349" width="120" alt="Logo" />
+  </a>
+</p>
 
-## Getting Started
+<p align="center">
+  <p align="center">
+   Lightweight and full-featured framework for building <a href="http://web.whatsapp.com/" target="blank">Whatsapp</a> applications.
+    <br/>
+    <br/>
+  </p>
+</p>
 
-First, run the development server:
+<p align="center">
+  <a href="https://github.com/fastwa/fastwa" target="_blank">
+    <img src="https://img.shields.io/github/stars/fastwa/fastwa" alt="Stargazers" />
+  </a>
+  <a href="https://github.com/fastwa/fastwa" target="_blank">
+    <img src="https://img.shields.io/github/issues/fastwa/fastwa" alt="Issues" />
+  </a>
+</p>
 
+## Description
+The repository contains [docs.fastwa.org](https://docs.fastwa.org) source code, the official Fastwa documentation.
+
+## Installing
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+$ npm install
+$ npm run dev
 ```
+Navigate to [`http://localhost:3000`](http://localhost:3000)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+All pages are written in [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and located in the `docs` directory.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
+### Contributing Guidelines
+Read through our [contributing guidelines](https://github.com/fastwa/fastwa/blob/main/CONTRIBUTING.md) to learn about our submission process, coding rules, and more.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Code of Conduct
+Help us keep **fastwa** open and inclusive. Please read and follow our [Code of Conduct](https://github.com/fastwa/fastwa/blob/main/CODE_OF_CONDUCT.md).
 
-## Learn More
+## Acknowledgments
+Special thanks to [@mrdiniz88](https://github.com/mrdiniz88) for inspiration.
 
-To learn more about Next.js, take a look at the following resources:
+## Stay in touch
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Author - [Natan Rodrigues](https://github.com/Nata4n)
+* Website - [https://fastwa.org](https://fastwa.org)
+* E-mail - [natanrce@proton.me](mailto:natanrce@proton.me)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Distributed under the GPL 3.0 License. See [LICENSE](https://github.com/fastwa/fastwa/blob/main/LICENSE) for more information.

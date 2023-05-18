@@ -1,4 +1,5 @@
 import './globals.css';
+import './docsearch.css';
 
 import { Inter } from 'next/font/google';
 import { Footer, Navbar } from './components';

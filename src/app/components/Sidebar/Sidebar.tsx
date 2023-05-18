@@ -1,11 +1,11 @@
 'use client';
 
 import { FC } from 'react';
-import { useSearch } from '@/app/contexts';
 import { Navigation } from '../Navigation';
+import { useSearch } from '@/app/contexts';
 
 export const Sidebar: FC = () => {
-  const { setIsOpen } = useSearch();
+  const { onOpen } = useSearch();
 
   return (
     <aside className="w-[284px] shrink-0 hidden md:block">
@@ -14,7 +14,7 @@ export const Sidebar: FC = () => {
           <button
             className="hidden mb-2 transition w-full rounded-md items-center border text-sm pl-2 pr-3 py-1.5 text-left px-2 text-[#888] cursor-pointer border-[#444] hover:border-[#666] md:flex focus-visible:outline-none"
             type="button"
-            onClick={() => setIsOpen(true)}
+            onClick={onOpen}
           >
             Search...
             <kbd className="ml-auto pl-3 flex-none text-xs text-[#444] dark:text-[#666]">

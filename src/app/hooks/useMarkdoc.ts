@@ -37,7 +37,7 @@ const collectHeadings = (
   if (!Array.isArray(nodes)) return [];
 
   for (const node of nodes) {
-    if (/^h[123]$/.test(node.name)) {
+    if (/^h[23]$/.test(node.name)) {
       const title = getNodeTitle(node);
 
       if (title) {

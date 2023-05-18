@@ -7,7 +7,7 @@ export const Footer: FC = () => (
       <div className="flex justify-center gap-3 items-center w-full my-8 mb-12">
         <Logo />
         <p className="text-xs text-[#888]">
-          Copyright© {new Date().getFullYear()}, GPL 3.0. &nbsp;
+          Copyright © {new Date().getFullYear()}, GPL 3.0. &nbsp;
           <a
             className="text-blue-500 font-bold no-underline"
             href="https://github.com/Nata4n"

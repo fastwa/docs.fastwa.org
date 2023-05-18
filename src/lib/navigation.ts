@@ -32,6 +32,10 @@ export const navigation = [
         href: '/building-your-application/dynamic-commands'
       },
       {
+        name: 'Listening events',
+        href: '/building-your-application/listening-events'
+      },
+      {
         name: 'Schedule',
         href: '/building-your-application/schedule'
       }

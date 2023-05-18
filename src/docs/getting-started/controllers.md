@@ -3,9 +3,9 @@ Controllers are responsible for handling incoming **messages** and returning **r
 
 Fastwa employs two **different** options for manipulating replies:
 
-|                        |                                                                                                                                                                                                                                                                                                                 |
-|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Standard (recommended) | Using this built-in method, when it returns a JavaScript primitive type (e.g., `string`), however, Fastwa will send just the value. This makes messages handling simple: just return the value, and Fastwa takes care of the rest.                                                                              |
+|                        |                                                                                                                                                                                                                                                                                    |
+|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Standard (recommended) | Using this built-in method, when it returns a JavaScript primitive type (e.g., `string`), however, Fastwa will send just the value. This makes messages handling simple: just return the value, and Fastwa takes care of the rest.                                     |
 | Platform-specific      | We can use the Baileys **socket instance**, which can be injected using the `@Socket()` decorator. With this approach, you have the ability to use the native reply methods exposed by that object. For example, you can send a message using code like `this.sock.sendMessage()`. |
 
 ## Socket

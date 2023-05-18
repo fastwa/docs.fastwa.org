@@ -30,3 +30,18 @@ A cron job schedules an arbitrary function (method call) to run automatically. C
 
 Declare a cron job with the `@Cron()` decorator preceding the method definition containing the code to be executed, as follows:
 
+```ts
+import { Injectable } from '@fastwa/common';
+import { Cron, CronExpression  } from '@fastwa/schedule';
+
+@Injectable()
+export class AppController {
+  @Socket()
+  socket: WASocket;
+  
+  @Cron(CronExpression.EVERY_5_MINUTES)
+  handleCron() {
+    this.socket.sendMessage(remoteJid, 'Send message every 5 minutes');
+  }
+}
+```

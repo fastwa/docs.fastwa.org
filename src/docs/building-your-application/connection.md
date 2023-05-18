@@ -54,22 +54,22 @@ import { initAuthCreds } from "@whiskeysockets/baileys"
 
 export async function useDatabaseAuthState() {
   const creds = initAuthCreds();
-  
+
   const state = {
     creds,
     keys: {
       async get<T extends keyof SignalDataTypeMap>(types: T, ids: string[]) {
         // Get session from database
-        return Repository.findOne();
+        return credsRepository.findOne();
       },
       async set(data: SignalDataSet) {
         // Update or insert session in database
-        Repository.upsert();
+        credsRepository.upsert();
       }
     }
   }
 
-  const saveCreds = () => Repository.save(creds)
+  const saveCreds = () => credsRepository.save(creds)
 
   return {
     state,

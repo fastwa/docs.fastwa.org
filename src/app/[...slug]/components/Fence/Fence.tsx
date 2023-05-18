@@ -12,23 +12,20 @@ type Props = {
 };
 
 export const Fence: FC<Props> = ({ children, language = 'bash' }) => {
-  const [copyCount, setCopyCount] = useState(0);
-  const copied = copyCount > 0;
+  const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
-    if (copyCount > 0) {
-      const timeout = setTimeout(() => setCopyCount(0), 1000);
+    if (isCopied) {
+      const timeout = setTimeout(() => setIsCopied(false), 1000);
 
       return () => {
         clearTimeout(timeout);
       };
     }
-  }, [copyCount]);
+  }, [isCopied]);
 
   const copyToClipboard = () => {
-    navigator.clipboard
-      .writeText(children)
-      .then(() => setCopyCount((count) => count + 1));
+    navigator.clipboard.writeText(children).then(() => setIsCopied(true));
   };
 
   return (
@@ -69,7 +66,7 @@ export const Fence: FC<Props> = ({ children, language = 'bash' }) => {
             width={20}
             className={cx(
               'pointer-events-none flex items-center gap-0.5 transition duration-300',
-              copied && '-translate-y-1.5 opacity-0'
+              isCopied && '-translate-y-1.5 opacity-0'
             )}
           >
             <path d="M6 17C4.89543 17 4 16.1046 4 15V5C4 3.89543 4.89543 3 6 3H13C13.7403 3 14.3866 3.4022 14.7324 4M11 21H18C19.1046 21 20 20.1046 20 19V9C20 7.89543 19.1046 7 18 7H11C9.89543 7 9 7.89543 9 9V19C9 20.1046 9.89543 21 11 21Z" />
@@ -85,7 +82,7 @@ export const Fence: FC<Props> = ({ children, language = 'bash' }) => {
             width="20"
             className={cx(
               'pointer-events-none flex items-center absolute transition duration-300',
-              !copied && 'translate-y-1.5 opacity-0'
+              !isCopied && 'translate-y-1.5 opacity-0'
             )}
           >
             <path d="M20 6L9 17l-5-5" />

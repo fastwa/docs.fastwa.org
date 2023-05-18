@@ -1,24 +1,32 @@
 'use client';
 
 import {
-  Dispatch,
   PropsWithChildren,
-  SetStateAction,
   createContext,
   useContext,
   useEffect,
+  useCallback,
   useState
 } from 'react';
 
 type SearchContext = {
   isOpen: boolean;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  onOpen: () => void;
+  onClose: () => void;
 };
 
 const SearchContext = createContext({} as SearchContext);
 
 export function SearchProvider({ children }: PropsWithChildren) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const onOpen = useCallback(() => {
+    setIsOpen(true);
+  }, [setIsOpen]);
+
+  const onClose = useCallback(() => {
+    setIsOpen(false);
+  }, [setIsOpen]);
 
   const handleKeyPress = (event: KeyboardEvent) => {
     if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
@@ -40,7 +48,7 @@ export function SearchProvider({ children }: PropsWithChildren) {
   }, []);
 
   return (
-    <SearchContext.Provider value={{ isOpen, setIsOpen }}>
+    <SearchContext.Provider value={{ isOpen, onOpen, onClose }}>
       {children}
     </SearchContext.Provider>
   );

@@ -20,7 +20,7 @@ export const theme = {
       }
     },
     {
-      types: ['string'],
+      types: ['string', 'constant'],
       style: {
         color: '#0ac5b2'
       }

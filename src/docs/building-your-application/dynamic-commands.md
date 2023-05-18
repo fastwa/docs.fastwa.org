@@ -7,16 +7,19 @@ A Dynamic Segment can be created by prefixing the parameter name with a colon. F
 To access the value of the parameter, you can use the [`@Param()`](/getting-started/param-decorators) decorator in the method handler signature (e.g., `findOne(@Param('id') id)`). 
 
 ## Example
-For example, a bot include the following command `/say :text` where `:text` is the dynamic segment.
+For example, a  command `/hello :name` where `:name` is the dynamic segment.
 
 ```ts
-@Controller()
-export class AppController {
-  @Command('/say :text')
-  async say(@Param('text') text: string) {
-    return `What is ${text}?`;
-  }
+@Command('/hello :name')
+async getHello(@Param('name') name: string) {
+  return `Hello, ${name}.`;
 }
 ```
 
-> **Note:** Dynamic Segments are equivalent to [Dynamic Commands](/building-your-application/interacting#dynamic-commands).
+| Command                | Example command      | `params`                     |
+|------------------------|----------------------|------------------------------|
+| `/register :name`      | `/register Natan`    | `{ name: 'Natan' }`          |
+| `/register :name :age` | `/register Natan 18` | `{ name: 'Natan', age: 18 }` |
+
+
+> **Note:** Dynamic Segments are equivalent to [Dynamic Commands](/building-your-application/dynamic-commands).

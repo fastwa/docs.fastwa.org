@@ -3,7 +3,7 @@ title: Getting started
 ---
 
 # Installation
-If you have questions about anything related to Fastwa, you're always welcome to ask our community on [GitHub Discussions](https://github.com/fastwa/fastwa/discussions).
+If you have questions about anything related to Fastwa, see [Join our Community](/#join-our-community) page.
 
 **System Requirements:**
 * [Node.js 16.8](https://nodejs.org/) or later.

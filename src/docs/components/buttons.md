@@ -6,7 +6,7 @@ title: Message components
 The first type of interactive component we'll cover creating is a Button.
 
 ## Building buttons
-To create your buttons, use the `ButtonBuilder` class, defining `index`.
+To create your buttons, use the `ButtonBuilder` class, defining a `displayText`.
 ```ts
 const callMe = new ButtonBuilder()
   .setDisplayText('Call me!')
@@ -24,6 +24,8 @@ ping() {
 ```
 
 ## Replying to buttons
+To add a button interact handler, you can use `@Button()` decorator.
+
 ```ts
 @Button('button-id')
 getReply() {

@@ -66,57 +66,59 @@ export const AutocompleteItem: FC<Props> = ({
   };
 
   return (
-    <li {...itemProps} onClick={onClose}>
-      <div
-        ref={titleRef}
-        onMouseEnter={() => handleMouseEnter(titleRef.current?.offsetTop)}
-        className="h-12 px-4 flex items-center gap-2 text-sm w-full text-[#888] rounded-md duration-150 transition relative cursor-pointer"
-      >
-        <svg
-          fill="none"
-          height="20"
-          shapeRendering="geometricPrecision"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="1.5"
-          viewBox="0 0 24 24"
-          width="20"
-        >
-          <path d="M7.06883 21.6H16.219C18.7973 21.6 20.8879 19.5093 20.8879 16.9312V5.86885C20.8879 3.29074 18.7973 1.20001 16.219 1.20001H7.06883C4.49072 1.20001 2.39999 3.29074 2.39999 5.86885V16.9312C2.39999 19.5093 4.49072 21.6 7.06883 21.6Z" />
-          <path d="M15.3946 15.842H7.89178M15.3946 11.245H7.89178M10.755 6.6586H7.89232" />
-        </svg>
-        <div dangerouslySetInnerHTML={{ __html: titleHtml }} />
-      </div>
-      {contentHtml && (
+    <li {...itemProps}>
+      <div onClick={onClose}>
         <div
-          ref={contentRef}
-          className="flex relative cursor-pointer"
-          onMouseEnter={() => handleMouseEnter(contentRef.current?.offsetTop)}
+          ref={titleRef}
+          onMouseEnter={() => handleMouseEnter(titleRef.current?.offsetTop)}
+          className="h-12 px-4 flex items-center gap-2 text-sm w-full text-[#888] rounded-md duration-150 transition relative cursor-pointer"
         >
-          <div className="border-l-2 border-[#333] ml-[25px] h-12 w-full px-4 flex items-center gap-2 text-sm text-[#888] overflow-hidden">
-            <svg
-              height="20"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              viewBox="0 0 24 24"
-              width="20"
-              className="flex-shrink-0"
-            >
-              <path d="M17 10H3" />
-              <path d="M21 6H3" />
-              <path d="M21 14H3" />
-              <path d="M17 18H3" />
-            </svg>
-            <span
-              className="overflow-hidden overflow-ellipsis whitespace-nowrap"
-              dangerouslySetInnerHTML={{ __html: contentHtml }}
-            />
-          </div>
+          <svg
+            fill="none"
+            height="20"
+            shapeRendering="geometricPrecision"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.5"
+            viewBox="0 0 24 24"
+            width="20"
+          >
+            <path d="M7.06883 21.6H16.219C18.7973 21.6 20.8879 19.5093 20.8879 16.9312V5.86885C20.8879 3.29074 18.7973 1.20001 16.219 1.20001H7.06883C4.49072 1.20001 2.39999 3.29074 2.39999 5.86885V16.9312C2.39999 19.5093 4.49072 21.6 7.06883 21.6Z" />
+            <path d="M15.3946 15.842H7.89178M15.3946 11.245H7.89178M10.755 6.6586H7.89232" />
+          </svg>
+          <div dangerouslySetInnerHTML={{ __html: titleHtml }} />
         </div>
-      )}
+        {contentHtml && (
+          <div
+            ref={contentRef}
+            className="flex relative cursor-pointer"
+            onMouseEnter={() => handleMouseEnter(contentRef.current?.offsetTop)}
+          >
+            <div className="border-l-2 border-[#333] ml-[25px] h-12 w-full px-4 flex items-center gap-2 text-sm text-[#888] overflow-hidden">
+              <svg
+                height="20"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                viewBox="0 0 24 24"
+                width="20"
+                className="flex-shrink-0"
+              >
+                <path d="M17 10H3" />
+                <path d="M21 6H3" />
+                <path d="M21 14H3" />
+                <path d="M17 18H3" />
+              </svg>
+              <span
+                className="overflow-hidden overflow-ellipsis whitespace-nowrap"
+                dangerouslySetInnerHTML={{ __html: contentHtml }}
+              />
+            </div>
+          </div>
+        )}
+      </div>
     </li>
   );
 };

@@ -29,6 +29,8 @@ export function useAutoComplete() {
     () =>
       createAutocomplete({
         id,
+        autoFocus: true,
+        openOnFocus: true,
         placeholder: 'Search documentation',
         defaultActiveItemId: 0,
         onStateChange({ state }) {

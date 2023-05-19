@@ -10,7 +10,7 @@ export const Navigation: FC = () => {
   const pathname = usePathname();
 
   return (
-    <div data-docs-crowler>
+    <>
       {navigation.map((category, index) => (
         <ul key={index}>
           <li className="relative mt-6">
@@ -41,6 +41,6 @@ export const Navigation: FC = () => {
           </li>
         </ul>
       ))}
-    </div>
+    </>
   );
 };

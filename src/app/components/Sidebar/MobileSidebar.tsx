@@ -44,7 +44,7 @@ export const MobileSidebar: FC = () => {
         </button>
       </div>
       {isOpen && (
-        <div className="h-screen w-full block">
+        <div className="h-screen w-full block" data-docs-crowler>
           <MobileNavigation />
         </div>
       )}

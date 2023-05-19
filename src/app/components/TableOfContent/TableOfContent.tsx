@@ -44,7 +44,10 @@ export const TableOfContents: FC<Props> = ({ headings }) => {
 
   return (
     <nav className="w-56 shrink-0 hidden lg:block">
-      <div className="hidden lg:block sticky top-[126px] overflow-y-auto">
+      <div
+        className="hidden lg:block sticky top-[126px] overflow-y-auto"
+        data-docs-table-of-contents
+      >
         <h2 className="mb-1 mt-[7px] text-sm font-medium text-white">
           On this page
         </h2>

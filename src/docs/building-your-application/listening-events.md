@@ -9,3 +9,5 @@ onConnectionUpdate({ qr }: Partial<ConnectionState>) {
   // Do something with qr
 }
 ```
+
+## Events

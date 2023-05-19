@@ -17,7 +17,7 @@ export const MobileSidebar: FC = () => {
   }, [isOpen]);
 
   return (
-    <div className="sticky top-[64px] z-10 md:hidden py-3 px-4 border-b border-[#333] backdrop-blur-sm backdrop-saturate-200 antialiased bg-black/50">
+    <div className="fixed w-full top-[64px] z-10 md:hidden py-3 px-4 border-b border-[#333] backdrop-blur-sm backdrop-saturate-200 antialiased bg-black/50">
       <div className="flex flex-col justify-between">
         <button
           className="flex items-center gap-1"

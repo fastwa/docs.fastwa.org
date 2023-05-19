@@ -28,7 +28,7 @@ export const Navbar: FC = () => {
   const { onOpen } = useSearch();
 
   return (
-    <header className="h-[64px] sticky top-0 z-50 flex items-center px-4 w-full antialiased backdrop-blur-sm backdrop-saturate-200 bg-black/50 border-b border-[#333]">
+    <header className="h-[64px] sticky top-0 z-50 flex items-center md:px-4 pr-4 w-full antialiased backdrop-blur-sm backdrop-saturate-200 bg-black/50 border-b border-[#333]">
       <nav className="mb-[-1px] h-full flex gap-6 items-center w-full max-w-screen-xl px-4 mx-auto">
         <a href="/">
           <Logo />

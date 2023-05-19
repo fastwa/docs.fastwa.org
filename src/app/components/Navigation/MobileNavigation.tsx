@@ -20,7 +20,7 @@ export const MobileNavigation: FC = () => {
             <div className="h-auto flex flex-col">
               <ul>
                 {category.items.map((item, index) => (
-                  <li key={index} className="my-1.5">
+                  <li key={index} className="my-1.5 text-sm">
                     <Link
                       className={cx(
                         'flex w-full text-left',

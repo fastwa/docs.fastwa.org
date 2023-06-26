@@ -10,7 +10,7 @@ export const Footer: FC = () => (
           Copyright © {new Date().getFullYear()}, GPL 3.0. &nbsp;
           <a
             className="text-blue-500 font-bold no-underline"
-            href="https://github.com/Nata4n"
+            href="https://github.com/natanrce"
           >
             Natan Rodrigues
           </a>

@@ -10,7 +10,4 @@ Under the hood, Fastwa makes use of [Baileys](https://github.com/WhiskeySockets/
 This framework allows you to use [TypeScript](https://www.typescriptlang.org/) decorators on [Baileys](https://github.com/WhiskeySockets/Baileys), it simplifies code and improves the readability.
 
 ## Join our Community
-If you have questions about anything related to Fastwa, you're always welcome to ask our community on [GitHub Discussions](https://github.com/fastwa/fastwa/discussions) and [Discord Channel](https://discord.com/).
-
-## License
-Distributed under the GPL 3.0 License. See [LICENSE](https://github.com/fastwa/fastwa/blob/main/LICENSE) for more information.
+If you have questions about anything related to Fastwa, you're always welcome to ask our community on [GitHub Discussions](https://github.com/fastwa/fastwa/discussions) and [Discord Channel](https://fastwa.org/discord).

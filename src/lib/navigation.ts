@@ -11,6 +11,10 @@ export const navigation = [
         href: '/getting-started/controllers'
       },
       {
+        name: 'Guards',
+        href: '/getting-started/guards'
+      },
+      {
         name: 'Param decorators',
         href: '/getting-started/param-decorators'
       }
@@ -55,10 +59,6 @@ export const navigation = [
       {
         name: 'Stickers',
         href: '/components/stickers'
-      },
-      {
-        name: 'Select menus',
-        href: '/components/select-menus'
       }
     ]
   }

@@ -49,12 +49,3 @@ const key = {
 // You can pass multiple keys to read multiple messages
 await sock.readMessages([key])
 ```
-
-## Calls
-
-```ts
-@On('call')
-async autoReject() {
- await this.sock.rejectCall()
-}
-```

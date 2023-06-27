@@ -11,3 +11,13 @@ onConnectionUpdate({ qr }: Partial<ConnectionState>) {
 ```
 
 ## Events
+
+
+## Calls
+
+```ts
+@On('call')
+async autoReject() {
+ await this.sock.rejectCall()
+}
+```

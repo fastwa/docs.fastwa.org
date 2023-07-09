@@ -24,12 +24,22 @@ export class CreateUserDto {
 }
 ```
 
+> **Good to know:** Read more about the class-validator decorators [here](https://github.com/typestack/class-validator#usage).
+
 ## Global scoped pipes
-We can realize it's full utility by setting it up as a **global-scoped** pipe so that it is applied to every route handler across the entire application.
+We can realize it's full utility by setting it up as a **global-scoped** pipe so that it is applied to every command handler across the entire application.
 
 ```ts
 async function bootstrap() {
-  const app = await FastwaFactory.create(AppModule);
+  const { version } = await fetchLatestBaileysVersion();
+  const { state, saveCreds } = await useMultiFileAuthState('./sessions');
+
+  const app = await WAFactory.create(AppModule, {
+    version,
+    auth: state,
+    printQRInTerminal: true,
+    saveCreds
+  });
 
   app.useGlobalPipes(new ValidationPipe());
 

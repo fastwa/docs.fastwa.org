@@ -11,6 +11,10 @@ export const navigation = [
         href: '/getting-started/controllers'
       },
       {
+        name: 'Pipes',
+        href: '/getting-started/pipes'
+      },
+      {
         name: 'Guards',
         href: '/getting-started/guards'
       },

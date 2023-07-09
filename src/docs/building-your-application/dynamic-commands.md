@@ -4,7 +4,7 @@ When you don't know the exact segment names ahead of time and want to create com
 ## Convention
 A Dynamic Command can be created by prefixing the parameter name with a colon. For example, `:id` or `:name`. These dynamic segments act as variable that can be replaced with specific values during runtime.
 
-To access the value of the parameter, you can use the [`@Param()`](/getting-started/param-decorators) decorator in the method handler signature (e.g., `findOne(@Param('id') id)`). 
+To access the value of the parameter, you can use the [`@Args()`](/getting-started/param-decorators) decorator in the method handler signature (e.g., `findOne(@Args('id') id)`). 
 
 
 ## Example
@@ -12,7 +12,7 @@ For example, a  command `/hello :name` where `:name` is the dynamic segment.
 
 ```ts
 @Command('/hello :name')
-async getHello(@Param('name') name: string) {
+async getHello(@Args('name') name: string) {
   return `Hello, ${name}.`;
 }
 ```
